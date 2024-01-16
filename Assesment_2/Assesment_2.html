@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        #slider {
+            width: 900px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        #slider img {
+            width: 100%;
+            display: none;
+        }
+
+        #thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #thumbnails img {
+            width: 100px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="slider">
+       
+    </div>
+
+    <div id="thumbnails">
+      
+    </div>
+
+    <script>
+        // Function to create a new image element
+        function createImage(src) {
+            const img = document.createElement('img');
+            img.src = src;
+            return img;
+        }
+
+        // Function to update the slider when a thumbnail is clicked
+        function updateSlider(index) {
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
+
+            images[index].style.display = 'block';
+        }
+
+        const imageUrls = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            'image4.jpg',
+            'image5.jpg',
+        ];
+
+     
+        const slider = document.getElementById('slider');
+
+      
+        const thumbnailsContainer = document.getElementById('thumbnails');
+
+      
+        const images = [];
+
+       
+        for (let i = 0; i < imageUrls.length; i++) {
+            const imageUrl = imageUrls[i];
+
+           
+            const sliderImage = createImage(imageUrl);
+            slider.appendChild(sliderImage);
+            images.push(sliderImage);
+
+           
+            const thumbnailImage = createImage(imageUrl);
+            thumbnailImage.addEventListener('click', () => updateSlider(i));
+            thumbnailsContainer.appendChild(thumbnailImage);
+        }
+
+        // Initially display the first image in the slider
+        updateSlider(0);
+    </script>
+
+</body>
+
+</html>
