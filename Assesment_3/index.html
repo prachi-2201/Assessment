@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/0df97a5ae9.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        #nav {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .menu {
+            margin-left: auto;
+        }
+
+        .img-logo {
+            width: 70px;
+            border-radius: 50%;
+        }
+
+
+        .items {
+            margin-left: 40px;
+            background-color: rgb(169, 162, 162);
+            padding: 10px;
+        }
+
+        .items:hover {
+            color: white;
+
+        }
+
+        .i {
+            display: none;
+        }
+        
+        .dropdown{
+            display: block !important;
+            background-color: gainsboro;
+            width: 100%;
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+        .dropdown li{
+            display: block;
+            width: 100%;
+            margin: 0;
+        }
+        .dropdown #home .submenu{
+            position: relative !important;
+        }
+        .submenu{
+            display:none;
+        }
+        #home:hover{
+            .submenu{
+            display: block !important;
+            width: 50px;
+            padding: 10px;
+            position: absolute;
+            color: black;
+            }
+        }
+        
+        .new li{
+            display: block;
+            padding: 5px;
+        }
+        @media (max-width: 1000px) {
+            .i{
+                display: block;
+            }
+            #menu{
+                display: none;
+            }
+           
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="nav">
+            <div class="img">
+                <img src="images.jpg" alt="" class="img-logo">
+            </div>
+            <div class="menu">
+                <div class="i" onclick="dropdown()"><i class="fa-solid fa-bars"></i></div>
+                
+            </div>
+            <div class="menu-items" id="menu">
+                <ul>
+                    <li class="items" id="home">Home
+                        <div class="submenu" id="submenu">
+                            <ul>
+                                <li>xyz</li>
+                                <li>abc</li>
+                                <li>mnu</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="items">About</li>
+                    <li class="items">Projects</li>
+                    <li class="items">Contacs</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script src="script.js"></script>
+</body>
+
+</html>
