@@ -7,6 +7,7 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/0df97a5ae9.js" crossorigin="anonymous"></script>
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -81,6 +82,8 @@
             display: block;
             padding: 5px;
         }
+
+        /* media query */
         @media (max-width: 1000px) {
             .i{
                 display: block;
@@ -97,12 +100,14 @@
     <nav>
         <div id="nav">
             <div class="img">
+                <!-- logo or user profile pic -->
                 <img src="images.jpg" alt="" class="img-logo">
             </div>
+            <!-- icon for side bar -->
             <div class="menu">
                 <div class="i" onclick="dropdown()"><i class="fa-solid fa-bars"></i></div>
-                
             </div>
+            <!-- menu  -->
             <div class="menu-items" id="menu">
                 <ul>
                     <li class="items" id="home">Home
@@ -121,6 +126,8 @@
             </div>
         </div>
     </nav>
+
+    <!-- javascript link -->
     <script src="script.js"></script>
 </body>
 
